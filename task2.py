@@ -30,17 +30,17 @@ class Main():
         return res_dct
 
     def __GetDictionary(self, content):
-        attribs = []
+        pairsToDict = []
         for i in content:
-            attribs.append(i.split())
-        changedattribs = []
+            pairsToDict.append(i.split())
+        allElementsOfDict = []
         dictionary = []
-        for attrib in attribs:
-            changedattribs.clear()
+        for attrib in pairsToDict:
+            allElementsOfDict.clear()
             for param in attrib:
-                changedattribs.append(param.split(':')[0])
-                changedattribs.append(param.split(':')[1])
-            dictionary.append(self.__ConvertToDict(changedattribs))
+                allElementsOfDict.append(param.split(':')[0])   #get key
+                allElementsOfDict.append(param.split(':')[1])   #get value
+            dictionary.append(self.__ConvertToDict(allElementsOfDict))
         return dictionary
 
     def __GetCorrectDocs(self, dictionary):
