@@ -5,7 +5,7 @@ class Main():
         self.minValue = minValue
         self.maxValue = maxValue
 
-    def IterateValue(self, iterateValue):
+    def __IterateValue(self, iterateValue):
         iterateStr = str(iterateValue)
         isPassed = 0
         for element in range(1, len(iterateStr)):
@@ -18,14 +18,14 @@ class Main():
                 break
         return isPassed
 
-    def CheckNumbers(self):
+    def __CheckNumbers(self):
         results = 0
         for i in range(self.minValue, self.maxValue):
-            results += self.IterateValue(i)
+            results += self.__IterateValue(i)
         return results
 
     def GetResult(self):
-        return self.CheckNumbers()
+        return self.__CheckNumbers()
 
 minValue = 265275
 maxValue = 781584
