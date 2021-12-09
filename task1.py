@@ -5,18 +5,17 @@ class Main():
         self.minValue = minValue
         self.maxValue = maxValue
 
-    def IterateValue(self,to_iterate):
-        test = str(to_iterate)
+    def IterateValue(self, iterateValue):
+        iterateStr = str(iterateValue)
         isPassed = 0
-        for element in range(1, len(test)):
-            if test[element] == test[element-1]:
+        for element in range(1, len(iterateStr)):
+            if iterateStr[element] == iterateStr[element-1]:
                 isPassed = 1
             else:
                 pass
-            if test[element-1] > test[element]:
+            if iterateStr[element-1] > iterateStr[element]:
                 isPassed = 0
                 break
-
         return isPassed
 
     def CheckNumbers(self):
@@ -28,8 +27,8 @@ class Main():
     def GetResult(self):
         return self.CheckNumbers()
 
-range_min = 265275
-range_max = 781584
-task1 = Main(range_min,range_max)
+minValue = 265275
+maxValue = 781584
+task1 = Main(minValue, maxValue)
 result = task1.GetResult()
 print(result)
